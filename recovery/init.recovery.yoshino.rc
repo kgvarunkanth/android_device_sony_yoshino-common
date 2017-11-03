@@ -28,3 +28,12 @@ service pulldecryptfiles /sbin/pulldecryptfiles.sh
     user root
     group root
     seclabel u:r:recovery:s0
+
+service qseecomd /sbin/qseecomd
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+on property:ro.crypto.fs_crypto_blkdev=/dev/block/dm-0
+    stop qseecomd
