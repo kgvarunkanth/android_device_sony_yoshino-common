@@ -12,6 +12,8 @@ on fs
     chmod 0664 /dev/ion
     chown system system /dev/ion
 
+    start pulldecryptfiles
+
 on post-fs
     # start clearpad_post_probe when filesystem is available for fwflash
     write /sys/devices/virtual/input/clearpad/post_probe_start 1
@@ -19,3 +21,10 @@ on post-fs
 on boot
     write /sys/class/android_usb/android0/idVendor 0x0fce
     write /sys/class/android_usb/android0/idProduct 0x7${ro.usb.pid_suffix}
+
+service pulldecryptfiles /sbin/pulldecryptfiles.sh
+    oneshot
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
