@@ -30,7 +30,8 @@ TW_USE_TOOLBOX := true
 # Enable support for encrypted fs
 TW_INCLUDE_CRYPTO := true
 
-TW_NO_EXFAT_FUSE := true
+TW_INCLUDE_EXFAT := true
+TW_INCLUDE_NTFS_3G := true
 TW_EXCLUDE_SUPERSU := true
 
 TW_THEME := portrait_hdpi

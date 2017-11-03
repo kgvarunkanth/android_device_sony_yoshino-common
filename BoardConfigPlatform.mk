@@ -43,7 +43,7 @@ ENABLE_CPUSETS := true
 
 ### KERNEL
 TARGET_KERNEL_VERSION := 4.4
-TARGET_KERNEL_SOURCE  := kernel/sony/msm8998
+TARGET_KERNEL_SOURCE  := kernel/sony/msm
 
 BOARD_KERNEL_CMDLINE += androidboot.bootdevice=1da4000.ufshc
 BOARD_KERNEL_CMDLINE += display_status=on
@@ -79,13 +79,11 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # vendor/qcom/opensource/cryptfs_hw
-#TARGET_HW_DISK_ENCRYPTION := true
-#TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
 ### SEPOLICY
-include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
+# include device/qcom/sepolicy/sepolicy.mk
+# BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 
-ifeq ($(WITH_TWRP),true)
--include $(LOCAL_PATH)/twrp.mk
-endif
+include $(LOCAL_PATH)/twrp.mk
