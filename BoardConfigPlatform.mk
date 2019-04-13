@@ -54,6 +54,7 @@ BOARD_KERNEL_CMDLINE += sched_enable_power_aware=1
 BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += zram.backend=z3fold
 BOARD_KERNEL_CMDLINE += buildvariant=userdebug
+BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image
 
 # !!! TEMPORARY HACK
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
