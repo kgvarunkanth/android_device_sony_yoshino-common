@@ -10,3 +10,5 @@ unix_socket_connect(taimport_vendor, tad, tad)
 allow taimport_vendor self:capability {
     setgid
 };
+
+set_prop(taimport_vendor, semc_version_prop);

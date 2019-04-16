@@ -15,14 +15,8 @@ allow ssr_dumper kmsg_device:chr_file r_file_perms;
 # /proc/cmdline
 allow ssr_dumper proc_cmdline:file r_file_perms;
 
-# /data/bluetooth
-r_dir_file(ssr_dumper, bluetooth_data_file)
-
 # /sys/kernel/debug/msm_subsys/crash_reason/adsp
 rw_dir_file(ssr_dumper, ssr_crash_reason_file)
-
-# /data/crashdata/tlcore_subsystem_00
-r_dir_file(ssr_dumper, crash_data_file)
 
 # /idd
 r_dir_file(ssr_dumper, idd_data_file)

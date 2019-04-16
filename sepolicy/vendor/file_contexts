@@ -1,15 +1,15 @@
 # file_contexts
 
 ### ROOT
-/rca(/.*)?                                                      u:object_r:idd_rca_file:s0
-/idd(/.*)?                                                      u:object_r:idd_data_file:s0
-/idd/crashdata(/.*)?                                            u:object_r:idd_crashdata_file:s0
-/idd/fsck(/.*)?                                                 u:object_r:idd_fsck_file:s0
-/idd/lost\+found(/.*)?                                          u:object_r:idd_lostfound_file:s0
-/idd/output(/.*)?                                               u:object_r:idd_output_file:s0
-/idd/socket(/.*)?                                               u:object_r:idd_socket_file:s0
-/idd/startup-prober(/.*)?                                       u:object_r:startupprober_file:s0
-/qns(/.*)?                                                      u:object_r:qns_file:s0
+/mnt/rca(/.*)?                                                  u:object_r:idd_rca_file:s0
+/mnt/idd(/.*)?                                                  u:object_r:idd_data_file:s0
+/mnt/idd/crashdata(/.*)?                                        u:object_r:idd_crashdata_file:s0
+/mnt/idd/fsck(/.*)?                                             u:object_r:idd_fsck_file:s0
+/mnt/idd/lost\+found(/.*)?                                      u:object_r:idd_lostfound_file:s0
+/mnt/idd/output(/.*)?                                           u:object_r:idd_output_file:s0
+/mnt/idd/socket(/.*)?                                           u:object_r:idd_socket_file:s0
+/mnt/idd/startup-prober(/.*)?                                   u:object_r:startupprober_file:s0
+/mnt/qns(/.*)?                                                  u:object_r:qns_file:s0
 
 ### CACHE
 /cache/modem(/.*)?                                              u:object_r:modemsw_cache_file:s0
@@ -17,6 +17,8 @@
 ### DATA
 /data/credmgr(/.*)?                                             u:object_r:credmgrd_data_file:s0
 /data/vendor/illumination_service(/.*)?                         u:object_r:illumination_data_file:s0
+/data/vendor/wfd(/.*)?                                          u:object_r:wfd_data_file:s0
+/data/vendor/fpc(/.*)?                                          u:object_r:fpc_data_file:s0
 
 ### DEVICES
 /dev/block/mmcblk0                                              u:object_r:root_block_device:s0
@@ -32,6 +34,7 @@
 /dev/block/platform/soc/1da4000\.ufshc/by-name/rdimage          u:object_r:ramdump_block_device:s0
 
 /dev/socket/cammw_tintless                                      u:object_r:camera_somc_socket:s0
+/dev/socket/fpc_oem                                             u:object_r:fpcd_socket:s0
 /dev/socket/illumination                                        u:object_r:illumination_socket:s0
 /dev/socket/qnsbsd                                              u:object_r:qns_socket:s0
 /dev/socket/secd_credmgr_sock                                   u:object_r:secd_credmgr_socket:s0
@@ -41,6 +44,8 @@
 /persist/pc(/.*)?                                               u:object_r:simpin_cache_data_file:s0
 
 # SYSFS
+/sys/class/leds/vibrator/activate                               u:object_r:sysfs_leds:s0
+
 /sys/devices/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?		u:object_r:sysfs_graphics:s0
 /sys/devices/soc/soc:qcom,ipa_fws@[a-f0-9]+/subsys0/restart_level   u:object_r:sysfs_ssr_toggle:s0
 /sys/devices/soc/soc:qcom,kgsl-hyp/subsys[0-9]/restart_level    u:object_r:sysfs_ssr_toggle:s0
@@ -91,6 +96,8 @@
 /(vendor|system/vendor)/bin/hw/vendor\.somc\.hardware\.miscta@1\.0-service  u:object_r:hal_miscta_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.somc\.hardware\.wifi@1\.0-service    u:object_r:hal_wifi_hostapd_default_exec:s0
 /(vendor|system/vendor)/bin/bt_ssr_dumper                       u:object_r:ssr_dumper_exec:s0
+/(vendor|system/vendor)/bin/charge_service                      u:object_r:charge_service_exec:s0
+/(vendor|system/vendor)/bin/ffu                                 u:object_r:ffu_exec:s0
 /(vendor|system/vendor)/bin/idd-logreader                       u:object_r:idd_exec:s0
 /(vendor|system/vendor)/bin/iddd                                u:object_r:idd_exec:s0
 /(vendor|system/vendor)/bin/init\.sony\.modem\.sh               u:object_r:qti_init_shell_exec:s0
@@ -107,3 +114,5 @@
 /(vendor|system/vendor)/bin/taimport                            u:object_r:taimport_exec:s0
 /(vendor|system/vendor)/bin/taimport_vendor                     u:object_r:taimport_vendor_exec:s0
 /(vendor|system/vendor)/bin/updatemiscta                        u:object_r:updatemiscta_exec:s0
+
+/(vendor|system/vendor)/etc/firmware/01AD-483238553632333031414D5220202020-D003.bin u:object_r:ffu_firmware_file:s0
