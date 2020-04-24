@@ -205,5 +205,6 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     p2p_supplicant.conf \
     wificond \
+    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
