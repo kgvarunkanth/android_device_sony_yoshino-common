@@ -30,6 +30,13 @@ PRODUCT_PACKAGES += \
     idd.fstab \
     qns.fstab
 
+# HIDL
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
+
 DEVICE_PACKAGE_OVERLAYS += \
     $(PLATFORM_PATH)/overlay
 
