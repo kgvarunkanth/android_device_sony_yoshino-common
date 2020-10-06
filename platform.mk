@@ -37,6 +37,10 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# QMI
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect
+
 DEVICE_PACKAGE_OVERLAYS += \
     $(PLATFORM_PATH)/overlay
 
