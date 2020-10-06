@@ -893,6 +893,6 @@
         </interface>
     </hal>
     <sepolicy>
-        <version>28.0</version>
+        <version>30.0</version>
     </sepolicy>
 </manifest>
