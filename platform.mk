@@ -30,13 +30,6 @@ PRODUCT_PACKAGES += \
     idd.fstab \
     qns.fstab
 
-# HIDL
-PRODUCT_PACKAGES += \
-    libhidltransport \
-    libhidltransport.vendor \
-    libhwbinder \
-    libhwbinder.vendor
-
 # QMI
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect
