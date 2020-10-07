@@ -23,5 +23,5 @@ sony_yoshino_init_library {
         "system/core/init",
         "external/selinux/libselinux/include"
     ],
-    shared_libs: ["libc++", "libbase", "libc", "libcutils", "libdl", "libhidlbase", "libhidltransport", "libhwbinder", "liblog", "libm", "libutils"],
+    shared_libs: ["libbase"],
 }
